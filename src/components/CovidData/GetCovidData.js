@@ -46,7 +46,7 @@ class GetCovidData extends Component {
         const {error, isLoaded, records} = this.state;
         console.log(JSON.stringify(records));
         if(error){
-            return <div>Error in loading</div>
+            return <div>Failed loading</div>
         }else if (!isLoaded) {
             return <div>Loading ...</div>
         }else{
