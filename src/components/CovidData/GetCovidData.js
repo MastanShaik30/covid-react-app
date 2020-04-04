@@ -16,7 +16,8 @@ class GetCovidData extends Component {
     componentDidMount(){
         // Using europe data
         // this return covid data 
-        fetch("/covid19/casedistribution/json/",{ 
+        // fetch("https://opendata.ecdc.europa.eu/covid19/casedistribution/json/",{ 
+            fetch("https://jsonplaceholder.typicode.com/photos",{  
             method: 'GET',
             headers:{
                 'Access-Control-Allow-Origin': '*'
@@ -51,7 +52,7 @@ class GetCovidData extends Component {
             return <div>Loading ...</div>
         }else{
             return(
-                    <Tablejson data={records.records}/>
+                    <Tablejson data={records}/>
                 // <MDBDataTable striped bordered hover data={records} />
             );
         }
