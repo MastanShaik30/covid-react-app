@@ -25,6 +25,7 @@ class Navbar extends Component {
             <Navitem item="Home" tolink="/"  activec={this.activeitem}></Navitem>
             <Navitem item="World" tolink="/world"  activec={this.activeitem}></Navitem>
             <Navitem item="India" tolink="/india"  activec={this.activeitem}></Navitem>
+            <Navitem item="District Wise in India" tolink="/indiadst"  activec={this.activeitem}></Navitem>
             <Navitem item="United States" tolink="/us"  activec={this.activeitem}></Navitem>
             </ul>
             </nav>

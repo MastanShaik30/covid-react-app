@@ -9,6 +9,7 @@ import Home from './contents/Home';
 import World from './contents/World';
 import Us from './contents/Us';
 import India from './contents/India';
+import IndiaDst from './contents/IndiaDst';
 
 class App extends Component {
   render() {
@@ -27,6 +28,9 @@ class App extends Component {
       </Route>
       <Route path="/india">
       <India />
+      </Route>
+      <Route path="/indiadst">
+      <IndiaDst />
       </Route>
       </div>
       </Router>
