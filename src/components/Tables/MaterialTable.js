@@ -41,10 +41,9 @@ class MaterialTable extends Component {
     render() {
         return (
             <MDBDataTable 
-            scrollY
             maxHeight="400px"
             bordered 
-            responsive
+            responsiveXl
             data={this.getData()} />
         );
     }
