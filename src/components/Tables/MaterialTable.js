@@ -18,7 +18,7 @@ class MaterialTable extends Component {
         var keys = this.getKeys();
         var columns = [];
         keys.map((key, index) => {
-            columns.push({ label: key.toUpperCase(), field: key, sort: 'asc' })
+            columns.push({ label: key.toUpperCase(), field: key, sort: 'asc',width:220 })
         })
         // console.log(JSON.stringify(columns));
         return columns;
@@ -41,8 +41,10 @@ class MaterialTable extends Component {
     render() {
         return (
             <MDBDataTable 
-            maxHeight="400px"
-            bordered 
+            scrollY
+            scrollX
+            maxHeight="360px"
+            bordered
             responsiveXl
             data={this.getData()} />
         );
