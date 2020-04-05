@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap');
+:root{
+  --sidebar-flex:1.5;
+  --condiv-flex:6;
+  --fontsize-p:1.2rem;
+  --fontsize-nav:1.6rem;
+  --typing-font:3rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*
+{
+  margin:0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  font-family: 'Raleway';
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App
+{
   display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+nav
+{
+  padding:40px 0px 0px 0px ;
+  flex:var(--sidebar-flex);
+  color: black;
+  background: rgb(255, 234, 40);
+  background: linear-gradient(180deg, rgb(255, 234, 40) 50%, rgb(143, 143, 143) 80%);
+}
+.condiv
+{
+  padding: 50px ;
+  background-color: #f4f5f9;
+  flex:var(--condiv-flex);
+}
+
+.home
+{
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+}
+.homepic
+{
+  border-radius: 50%;
+  width: 400px;
+  margin: 10px;
+}
+.typingeffect
+{
+  font-size: var(--typing-font);
+  margin-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul{
+  font-size:var(--fontsize-nav) ;
+  text-align: center;
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+nav ul li
+{
+  margin:40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+a
+{
+  text-decoration: none;
+  color:black;
+}
+
+.subtopic
+{
+  margin:10px 10px 30px 10px !important;
+}
+p{
+  font-size: var(--fontsize-p);
+}
+h1,h2,h3,h4,p{
+  margin: 10px;
+}
+
+
+
+.active
+{
+  font-weight: bolder;
+}
+.india ul li
+{
+  list-style-type:none;
+  margin:30px;
+}
+
+@media all and (max-width: 450px) {
+  :root {
+    --fontsize-nav:1rem;
+    --sidebar-flex:0;
+    --typing-font:2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .App
+  {
+    flex-direction: column;
+  }
+  .sidebar
+  {
+    padding: 30px;
+    color: black;
+    background: rgb(228, 207, 16);
+    background: linear-gradient(180deg, rgb(228, 207, 16) 50%, rgb(143, 143, 143) 80%);
+  }
+  .condiv
+  {
+    padding: 50px ;
+  }
+  nav ul
+  {
+    display: flex;
+    color: black;
+  }
+  nav ul li
+  {
+    margin: 10px;
+    color: black;
   }
 }

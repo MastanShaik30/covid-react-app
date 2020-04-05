@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import MaterialTable from '../Tables/MaterialTable';
+import { MDBBtn } from 'mdbreact';
 
-import Tablejson from '../Table';
-// import { MDBDataTable } from 'mdbreact';
-
-class GetCovidData extends Component {
+class GetAllCountriesCovidData extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -14,20 +13,12 @@ class GetCovidData extends Component {
     }
 
     componentDidMount(){
-        // Using europe data
-        // this return covid data 
-        // fetch("https://opendata.ecdc.europa.eu/covid19/casedistribution/json/",{ 
-        //     fetch("https://jsonplaceholder.typicode.com/photos",{  
-        //     method: 'GET',
-        //     headers:{
-        //         'Access-Control-Allow-Origin': '*'
-        //     }
-        //   })
         fetch("https://covid-193.p.rapidapi.com/statistics", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "covid-193.p.rapidapi.com",
-                "x-rapidapi-key": "088854f95bmsh82d19f9ac952d36p1da956jsn2401cfa29608"
+                "x-rapidapi-key": "088854f95bmsh82d19f9ac952d36p1da956jsn2401cfa29608",
+                "Access-Control-Allow-Origin": "*"
             }
         })
         .then( response => response.json())
@@ -52,8 +43,6 @@ class GetCovidData extends Component {
 
     render() {
         const {error, isLoaded, records} = this.state;
-
-        console.log(JSON.stringify(final));
         if(error){
             return <div>Failed loading</div>
         }else if (!isLoaded) {
@@ -62,9 +51,10 @@ class GetCovidData extends Component {
             var responses = [];
             responses = records.response;
             var final = [];
+            console.log(final);
             responses.map((response, index) => {
                 final.push({
-                    country: response.country,
+                    country:   response.country,
                     active_cases: response.cases.active,
                     total_cases: response.cases.total,
                     total_deaths: response.deaths.total,
@@ -73,12 +63,14 @@ class GetCovidData extends Component {
                 )
             });
             return(
-                    <Tablejson data={final}/>
-                // <MDBDataTable striped bordered hover data={records} />
+                <React.Fragment>
+                    <MaterialTable data={final}></MaterialTable>
+                </React.Fragment>
+                    
             );
         }
       
     }
   }
 
-  export default GetCovidData;
+  export default GetAllCountriesCovidData;
