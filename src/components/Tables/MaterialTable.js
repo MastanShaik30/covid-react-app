@@ -44,6 +44,7 @@ class MaterialTable extends Component {
             scrollY
             maxHeight="400px"
             bordered 
+            responsive
             data={this.getData()} />
         );
     }
