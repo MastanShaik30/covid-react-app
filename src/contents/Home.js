@@ -8,7 +8,7 @@ class Home extends Component {
     render() {
         return (
             <div className="condiv home">
-            <img src={homepic} className="homepic"></img>
+            <img src={homepic} alt="homepic" className="homepic"></img>
             <ReactTypingEffect className="typingeffect" text={['Covid Data']} speed={80} eraseDelay={700}/>
             </div>
             )

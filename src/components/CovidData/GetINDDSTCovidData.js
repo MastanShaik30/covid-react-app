@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MaterialTable from '../Tables/MaterialTable';
+import GenerateComponents from '../Tables/GenerateComponents';
 
 class GetINDCovidData extends Component {
     constructor(props){
@@ -43,6 +43,30 @@ class GetINDCovidData extends Component {
         return Object.keys(json);
     }
 
+    getDistrictsData = function (districts) {
+        var allDistrictsData=[];
+        var districtKeys = this.getKeys(districts);
+        districtKeys.map((district,index) =>{
+            var districtData ={};
+            districtData.district = district;
+            districtData.confirmed = districts[district].confirmed;
+            allDistrictsData.push(districtData);
+        });
+        return allDistrictsData;
+    }
+
+    getStateData = function(states_district,state){
+        var stateData={};
+        stateData.state=states_district[state].state;
+        stateData.confirmed = states_district[state].confirmed;
+        stateData.deaths = states_district[state].deaths;
+        stateData.lastupdatedtime = states_district[state].lastupdatedtime;
+        if(states_district[state].district != undefined){
+        stateData.districts =this.getDistrictsData(states_district[state].district);
+        }
+        return stateData;
+    }
+
     render() {
         const {error, isLoaded, records} = this.state;
         if(error){
@@ -52,21 +76,21 @@ class GetINDCovidData extends Component {
         }else{
             var states_district = records.state_wise;
             console.log(states_district);
+            var allStateData=[];
             var states=this.getKeys(states_district);
             states.map((state,index)=>{
-                // columns.push({ label: key.toUpperCase(), field: key, sort: 'asc',width:220 })
-                var districtData = states_district[state];
-                console.log(districtData);
+                allStateData.push(this.getStateData(states_district,state));
+                
             });
+            console.log('All States Data  = '+ JSON.stringify(allStateData));
             return(
-                <React.Fragment>
-                    <div>
-
-                    </div>
-                    {/* <MaterialTable data={final}></MaterialTable> */}
-                </React.Fragment>
+                
+                        <div>
+                          {allStateData.map(state => GenerateComponents(state))}
+                        </div>
                     
             );
+            
         }
       
     }
