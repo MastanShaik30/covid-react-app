@@ -33,8 +33,21 @@ nav
 .condiv
 {
   padding: 50px ;
-  background-color: #f4f5f9;
+  background-color: #000000;
+  color:#ff0000;
   flex:var(--condiv-flex);
+}
+
+.dataTable .table{
+  color: #ff0000;
+}
+
+.dataTable .label{
+  color: #ff0000;
+}
+
+.dataTable .pagination .page-item .page-link {
+  color: #ff0000;
 }
 
 .home
@@ -72,7 +85,7 @@ nav ul li
 a
 {
   text-decoration: none;
-  color:black;
+  color:red;
 }
 
 .subtopic

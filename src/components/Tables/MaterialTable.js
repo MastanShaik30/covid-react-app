@@ -46,6 +46,7 @@ class MaterialTable extends Component {
             maxHeight="360px"
             bordered
             responsiveXl
+            className='dataTable'
             data={this.getData()} />
         );
     }
