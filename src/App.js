@@ -10,6 +10,7 @@ import World from './contents/World';
 import Us from './contents/Us';
 import India from './contents/India';
 import IndiaDst from './contents/IndiaDst';
+import Map from './contents/Map';
 
 class App extends Component {
   render() {
@@ -19,6 +20,9 @@ class App extends Component {
       <Navbar />
       <Route exact path="/">
       <Home />
+      </Route>
+      <Route path="/map">
+      <Map />
       </Route>
       <Route path="/world">
       <World />

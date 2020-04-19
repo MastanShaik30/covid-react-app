@@ -22,6 +22,13 @@ body{
   width: 100vw;
   min-height: 100vh;
 }
+
+.mapContainer,
+.mapBox {
+  width: 100%;
+  height: 100%;
+}
+
 nav
 {
   padding:40px 0px 0px 0px ;
@@ -36,6 +43,11 @@ nav
   background-color: #000000;
   color:#ff0000;
   flex:var(--condiv-flex);
+}
+
+.lesspad
+{
+  padding: 1px ;
 }
 
 .dataTable .table{
@@ -201,4 +213,43 @@ h1,h2,h3,h4,p{
   font-weight: 400;
   font-size: 14px;
   padding: 18px;
+}
+
+
+.mapboxgl-popup {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  color: #424242;
+}
+
+.mapboxgl-popup-content {
+  padding: 1rem;
+  margin: 0;
+}
+
+.mapboxgl-popup-content *{
+    margin: 0 0 0.5rem;
+    padding: 0;
+}
+
+.mapboxgl-popup-content:last-child {
+      margin-bottom: 0;
+    }
+
+.mapboxgl-popup-content p {
+    border-bottom: 1px solid rgba(black, 0.2);
+}
+
+.mapboxgl-popup-content p b {
+      font-size: 1.6rem;
+      color: #212121;
+      padding: 0 5px;
+    }
+
+.mapboxgl-popup-content img {
+    display: block;
+    width: 3rem;
+    height: 3rem;
 }

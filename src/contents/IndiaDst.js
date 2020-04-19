@@ -10,7 +10,7 @@ class IndiaDst extends Component {
     render() {
         return (
             <React.Fragment>
-            <div className="condiv">
+            <div className="condiv lesspad">
                 <h1>India Data by State</h1>
                 <GetINDDSTCovidData />
             </div>

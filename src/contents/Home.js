@@ -9,7 +9,8 @@ class Home extends Component {
         return (
             <div className="condiv home">
             <img src={homepic} alt="homepic" className="homepic"></img>
-            <ReactTypingEffect className="typingeffect" text={['Covid Data']}/>
+            {/* <ReactTypingEffect className="typingeffect" text={['Covid Data']}/> */}
+            <h1>Covid Data with Map</h1>
             </div>
             )
         }
