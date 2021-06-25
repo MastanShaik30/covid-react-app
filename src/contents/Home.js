@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactTypingEffect from 'react-typing-effect';
+//import ReactTypingEffect from 'react-typing-effect';
 import homepic from '../img/Corona.jpg';
 
 

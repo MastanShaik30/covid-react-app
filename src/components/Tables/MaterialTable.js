@@ -18,7 +18,8 @@ class MaterialTable extends Component {
         var keys = this.getKeys();
         var columns = [];
         keys.map((key, index) => {
-            columns.push({ label: key.toUpperCase(), field: key, sort: 'asc',width:220 })
+            columns.push({ label: key.toUpperCase(), field: key, sort: 'asc',width:220 });
+            return null;
         });
         // console.log(JSON.stringify(columns));
         return columns;

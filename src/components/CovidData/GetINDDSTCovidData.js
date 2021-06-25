@@ -51,6 +51,7 @@ class GetINDCovidData extends Component {
             districtData.district = district;
             districtData.confirmed = districts[district].confirmed;
             allDistrictsData.push(districtData);
+            return null;
         });
         return allDistrictsData;
     }
@@ -61,7 +62,7 @@ class GetINDCovidData extends Component {
         stateData.confirmed = states_district[state].confirmed;
         stateData.deaths = states_district[state].deaths;
         stateData.lastupdatedtime = states_district[state].lastupdatedtime;
-        if(states_district[state].district != undefined){
+        if(states_district[state].district !== undefined){
         stateData.districts =this.getDistrictsData(states_district[state].district);
         }
         return stateData;
@@ -80,7 +81,7 @@ class GetINDCovidData extends Component {
             var states=this.getKeys(states_district);
             states.map((state,index)=>{
                 allStateData.push(this.getStateData(states_district,state));
-                
+                return null;                
             });
             console.log('All States Data  = '+ JSON.stringify(allStateData));
             return(

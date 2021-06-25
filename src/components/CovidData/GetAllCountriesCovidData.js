@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MaterialTable from '../Tables/MaterialTable';
-import { MDBBtn } from 'mdbreact';
+//import { MDBBtn } from 'mdbreact';
 
 class GetAllCountriesCovidData extends Component {
     constructor(props){
@@ -53,14 +53,14 @@ class GetAllCountriesCovidData extends Component {
             var final = [];
             console.log(final);
             responses.map((response, index) => {
-                final.push({
+              final.push({
                     country:   response.country,
                     active_cases: response.cases.active,
                     total_cases: response.cases.total,
                     total_deaths: response.deaths.total,
                     update_time: response.time
-                }
-                )
+                });
+                return null;
             });
             return(
                 <React.Fragment>
